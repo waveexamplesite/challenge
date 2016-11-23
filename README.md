@@ -11,9 +11,9 @@ To [run this example](#evaluation) there are no additional requirements from wha
 After initial interview my plan was to show how [Kubernetes](http://kubernetes.io) could be leveraged as a solution to this challenged.
 One of my principles was that ideally there should be no other requirements for the example to run locally (eg. not expect that Terraform, Ansible or other tools would be available) than what has been described in the evaluation criteria.
 
-As [IAM Roles](http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html) are not available in the AWS account provided and the prefferred ways of installing Kubernetes on AWS (for example [kops](https://github.com/kubernetes/kops) and [kube-aws by CoreOS](https://github.com/coreos/coreos-kubernetes)) rely heavily on IAM roles I decided to build a fully custom solution and naive (not production ready) brought up by some shell scripts and [Terraform](https://www.terraform.io).
+As [IAM Roles](http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html) are not available in the AWS account provided and the preferred ways of installing Kubernetes on AWS (for example [kops](https://github.com/kubernetes/kops) and [kube-aws by CoreOS](https://github.com/coreos/coreos-kubernetes)) rely heavily on IAM roles I decided to build a fully custom solution and naive (not production ready) brought up by some shell scripts and [Terraform](https://www.terraform.io).
 
- #### Architecture overview
+#### Architecture overview
 
 During the setup we use multitude of AWS resources from EC2 key-pair to VPC's and Route53 DNS records, but the main architecture is comprised of the following:
 
@@ -46,7 +46,7 @@ We use Ubuntu 16.04 hvm-ssd EC2 images (ami-1b772d7e) for the basis of this setu
 * kubernetes/
     - Generic Kubernetes specifications for Namespaces and kube-lego
 * bootstrap/
-    - Scripts used to bring up and destory the bastion and initiate cluster setup
+    - Scripts used to bring up and destroy the bastion and initiate cluster setup
 
 
 #### Evaluation
@@ -54,7 +54,7 @@ We use Ubuntu 16.04 hvm-ssd EC2 images (ami-1b772d7e) for the basis of this setu
 To evaluate the solution please run `./aws-app.sh`.
 
 When the bastion host and Kubernetes cluster have not been set up yet the script will guide you through the bootstrapping process.
-After the bootstrapping you will be asked wheter you would like to build and deploy the example application to staging environment or to production.
+After the bootstrapping you will be asked whether you would like to build and deploy the example application to staging environment or to production.
 Please be advised that deployment to production is not possible before the image has been built and used in staging environment.
 
 To access the bastion host without using the `./aws-app.sh`. use the following:
