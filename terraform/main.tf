@@ -232,7 +232,7 @@ resource "aws_proxy_protocol_policy" "web" {
 }
 
 resource "aws_route53_record" "kubernetes-catchall-dns" {
-    zone_id = "Z1WCZXQ4UYIIB5"
+    zone_id = "ZACNZZ3RF9NO2"
     name = "*.waveexample.site"
     type = "CNAME"
     ttl = "300"
@@ -240,7 +240,7 @@ resource "aws_route53_record" "kubernetes-catchall-dns" {
 }
 
 resource "aws_route53_record" "kubernetes-apiserver-dns" {
-    zone_id = "Z1WCZXQ4UYIIB5"
+    zone_id = "ZACNZZ3RF9NO2"
     name = "kubernetes-api.waveexample.site"
     type = "A"
     ttl = "300"
