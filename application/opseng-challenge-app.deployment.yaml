@@ -1,0 +1,33 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: opseng-challenge-app
+  labels:
+    commit: ${revision}
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        role: opseng-challenge-app
+      annotations:
+        commit: ${revision}
+    spec:
+      containers:
+      - name: app
+        image: joonathanwaveexample/opseng-challenge-app:${revision}
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8000
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 8000
+          initialDelaySeconds: 2
+          timeoutSeconds: 2
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 8000
+          initialDelaySeconds: 2
+          timeoutSeconds: 2

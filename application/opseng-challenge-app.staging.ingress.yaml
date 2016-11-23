@@ -1,0 +1,20 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: opseng-challenge
+  annotations:
+    ingress.kubernetes.io/upstream-fail-timeout: "30"
+    kubernetes.io/tls-acme: "true"
+spec:
+  tls:
+  - secretName: opseng-challenge-app-tls
+    hosts:
+    - staging.waveexample.site
+  rules:
+  - host: staging.waveexample.site
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: opseng-challenge-app
+          servicePort: 80

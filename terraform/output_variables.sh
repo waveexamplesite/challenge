@@ -1,0 +1,1 @@
+export KUBERNETES_TOKEN=afb57c.fc2e7dfe03777a1d
