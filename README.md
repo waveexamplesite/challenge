@@ -51,7 +51,13 @@ We use Ubuntu 16.04 hvm-ssd EC2 images (ami-1b772d7e) for the basis of this setu
 
 #### Evaluation
 
-To evaluate the solution please run `./aws-app.sh`.
+To evaluate the solution please run the following
+
+```
+git clone https://github.com/waveexamplesite/challenge.git
+cd challenge
+./aws-app.sh
+```
 
 When the bastion host and Kubernetes cluster have not been set up yet the script will guide you through the bootstrapping process.
 After the bootstrapping you will be asked whether you would like to build and deploy the example application to staging environment or to production.
