@@ -13,6 +13,8 @@ One of my principles was that ideally there should be no other requirements for 
 
 As [IAM Roles](http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html) are not available in the AWS account provided and the preferred ways of installing Kubernetes on AWS (for example [kops](https://github.com/kubernetes/kops) and [kube-aws by CoreOS](https://github.com/coreos/coreos-kubernetes)) rely heavily on IAM roles I decided to build a fully custom solution and naive (not production ready) brought up by some shell scripts and [Terraform](https://www.terraform.io).
 
+Logging, monitoring and alerting were outside of the scope for this implementation. This is by no means a production grade solution.
+
 #### Architecture overview
 
 During the setup we use multitude of AWS resources from EC2 key-pair to VPC's and Route53 DNS records, but the main architecture is comprised of the following:
